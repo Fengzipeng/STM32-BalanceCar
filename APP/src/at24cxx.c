@@ -1,4 +1,22 @@
 #include "at24cxx.h"
+void FloatTOChar(float *data,unsigned char *buf,u8 beg) 
+{
+   u8 *point;
+   point=(u8*)data;
+   buf[beg]=point[0];
+   buf[beg+1]=point[1];
+   buf[beg+2]=point[2];
+   buf[beg+3]=point[3];
+}
+float CharToFloat(u8* buff)
+{
+    float data;
+	((u8*)&data)[0]=buff[0];
+	((u8*)&data)[1]=buff[1];
+	((u8*)&data)[2]=buff[2];
+	((u8*)&data)[3]=buff[3];
+	return data;
+}
 u8 AT24Cxx_ReadOneByte(u16 addr)//读取一个字节
 {                         //add--数据地址
 	u8 temp;

@@ -70,6 +70,12 @@ void Print_Data(void *pdata)
 }
 void Usart_SendData(void *pdata)
 {
+  OS_CPU_SR cpu_sr=0;
+  pdata=pdata;
+  while(1)
+  	{
+  	 Delay_ms(1000);
+  	}
 	
 }
 void FLASH_Task(void *pdata)
